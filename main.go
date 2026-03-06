@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+	"os"
+)
 
 type Card struct {
 	ID      int64
@@ -71,7 +75,19 @@ func GameMenu() {
 	}
 }
 
-func SaveJson() {}
+//SAVE JSON
+
+func SaveJson() {
+	data, err := json.MarshalIndent(deck, "", "  ")
+
+	if err != nil {
+		fmt.Println("Erro ao salvar")
+		return
+	}
+
+	os.WriteFile("deck.json", data, 0644)
+	fmt.Println("Deck Salvo em deck.json")
+}
 
 //CARD FUNC
 
@@ -124,7 +140,35 @@ func DeleteCard() {
 	fmt.Println("Carta nao encontrada")
 }
 
-func EditCard() {}
+func EditCard() {
+	var id int64
+
+	fmt.Println("Listar todas as cartas:")
+	ListCard()
+
+	fmt.Println("Qual Id da carta que deseja editar: ")
+	fmt.Scan(&id)
+
+	for i, card := range cards {
+		if card.ID == id {
+			fmt.Println("Novo Nome:")
+			fmt.Scan(&cards[i].Name)
+
+			fmt.Println("Novo Tipo:")
+			fmt.Scan(&cards[i].Type)
+
+			fmt.Println("Novo Ataque:")
+			fmt.Scan(&cards[i].Attack)
+
+			fmt.Println("Nova Defesa:")
+			fmt.Scan(&cards[i].Defence)
+
+			fmt.Println("Carta editada com sucesso")
+			return
+		}
+	}
+	fmt.Println("Carta nao encontrada")
+}
 
 func CreateDeck() {
 	var deckName string
