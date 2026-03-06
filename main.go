@@ -100,7 +100,13 @@ func CreateCard() {
 	cards = append(cards, card)
 	fmt.Println("Carta Forjada Com Sucesso")
 }
-func ListCard()   {}
+func ListCard() {
+	for _, card := range cards {
+		fmt.Printf("ID: %d | Nome: %s | Tipo: %s | Ataque: %d | Defesa: %d \n",
+			nextID, card.Name, card.Type, card.Attack, card.Defence)
+	}
+}
+
 func EditCard()   {}
 func DeleteCard() {}
 func CreateDeck() {}
