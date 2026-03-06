@@ -57,7 +57,7 @@ func GameMenu() {
 		case 6:
 			ListDeck()
 		case 7:
-			EditDeck()
+			AddToDeck()
 		case 8:
 			DeleteDeck()
 		case 9:
@@ -107,8 +107,6 @@ func ListCard() {
 	}
 }
 
-func EditCard() {}
-
 func DeleteCard() {
 	var id int64
 	fmt.Print("Qual Id da carta que sera deletada? ")
@@ -123,7 +121,44 @@ func DeleteCard() {
 	}
 	fmt.Println("Carta nao encontrada")
 }
-func CreateDeck() {}
-func EditDeck()   {}
-func ListDeck()   {}
+
+func EditCard() {}
+
+func CreateDeck() {
+	var deckName string
+
+	fmt.Println("Digite o nome do Deck:")
+	fmt.Scan(&deckName)
+
+	deck = Deck{
+		Name: deckName,
+	}
+
+	fmt.Println("Deck criado")
+}
+
+func AddToDeck() {
+	var id int64
+
+	fmt.Println("Vamos Listar todas as cartas disponiveis")
+	ListCard()
+
+	fmt.Print("Id da carta para adicionar: ")
+	fmt.Scan(&id)
+
+	for _, card := range cards {
+		if card.ID == id {
+			deck.Cards = append(deck.Cards, card)
+			fmt.Println("Carta adicionada ao deck")
+			return
+		}
+	}
+
+	fmt.Println("Carta nao encontrada")
+}
+
+func ListDeck() {
+	fmt.Println("Deck: ", deck.Name)
+
+}
 func DeleteDeck() {}
