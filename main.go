@@ -73,6 +73,8 @@ func GameMenu() {
 
 func SaveJson() {}
 
+//CARD FUNC
+
 func CreateCard() {
 	var name string
 	var cardType string
@@ -137,6 +139,8 @@ func CreateDeck() {
 	fmt.Println("Deck criado")
 }
 
+//DECK FUNC
+
 func AddToDeck() {
 	var id int64
 
@@ -159,6 +163,9 @@ func AddToDeck() {
 
 func ListDeck() {
 	fmt.Println("Deck: ", deck.Name)
-
+	for _, card := range cards {
+		fmt.Printf("ID: %d | Nome: %s | Tipo: %s | Ataque: %d | Defesa: %d \n",
+			nextID, card.Name, card.Type, card.Attack, card.Defence)
+	}
 }
 func DeleteDeck() {}
