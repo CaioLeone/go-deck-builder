@@ -107,8 +107,22 @@ func ListCard() {
 	}
 }
 
-func EditCard()   {}
-func DeleteCard() {}
+func EditCard() {}
+
+func DeleteCard() {
+	var id int64
+	fmt.Print("Qual Id da carta que sera deletada? ")
+	fmt.Scan(&id)
+
+	for i, card := range cards {
+		if card.ID == id {
+			cards = append(cards[:i], cards[i+1:]...)
+			fmt.Println("Carta deletada!")
+			return
+		}
+	}
+	fmt.Println("Carta nao encontrada")
+}
 func CreateDeck() {}
 func EditDeck()   {}
 func ListDeck()   {}
