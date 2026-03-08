@@ -9,7 +9,7 @@ import (
 )
 
 func SaveJson() {
-	data, err := json.MarshalIndent(deck, "", "  ")
+	data, err := json.MarshalIndent(deck.Deck, "", "  ")
 
 	if err != nil {
 		fmt.Println("Erro ao salvar")
