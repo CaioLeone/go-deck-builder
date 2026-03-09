@@ -26,7 +26,7 @@ func AddToDeck(d *modelRef.Deck) {
 	fmt.Print("Id da carta para adicionar: ")
 	fmt.Scan(&id)
 
-	for _, card := range cards {
+	for _, card := range d.Cards {
 		if card.ID == id {
 			d.Cards = append(d.Cards, card)
 			fmt.Println("Carta adicionada ao deck")
@@ -39,7 +39,7 @@ func AddToDeck(d *modelRef.Deck) {
 
 func ListDeck(d *modelRef.Deck) {
 	fmt.Println("Deck: ", d.Name)
-	for _, card := range cards {
+	for _, card := range d.Cards {
 		fmt.Printf("ID: %d | Nome: %s | Tipo: %s | Ataque: %d | Defesa: %d \n",
 			nextID, card.Name, card.Type, card.Attack, card.Defence)
 	}

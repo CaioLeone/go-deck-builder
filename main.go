@@ -37,21 +37,21 @@ func GameMenu() {
 
 		switch option {
 		case 1:
-			serviceRef.CreateCard(&cards, &nextID)
+			serviceRef.CreateCard()
 		case 2:
-			serviceRef.ListCard(cards)
+			serviceRef.ListCard()
 		case 3:
-			serviceRef.EditCard(cards)
+			serviceRef.EditCard()
 		case 4:
-			serviceRef.DeleteCard(&cards)
+			serviceRef.DeleteCard()
 		case 5:
 			serviceRef.CreateDeck(&decks)
 		case 6:
-			serviceRef.ListDeck(decks)
+			serviceRef.ListDeck(&decks)
 		case 7:
-			serviceRef.AddToDeck(cards, &decks)
+			serviceRef.AddToDeck(&decks)
 		case 8:
-			dataRef.SaveJson(decks)
+			dataRef.SaveJson(&decks)
 		case 0:
 			fmt.Println("Saindo...")
 			return

@@ -40,7 +40,7 @@ func CreateCard() {
 func ListCard() {
 	for _, card := range cards {
 		fmt.Printf("ID: %d | Nome: %s | Tipo: %s | Ataque: %d | Defesa: %d \n",
-			nextID, card.Name, card.Type, card.Attack, card.Defence)
+			card.ID, card.Name, card.Type, card.Attack, card.Defence)
 	}
 }
 
