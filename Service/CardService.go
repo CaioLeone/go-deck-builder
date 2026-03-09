@@ -2,9 +2,14 @@ package Service
 
 import (
 	"fmt"
+
+	modelRef "github.com/caioleone/go-deck-builder/model"
 )
 
-func CreateCard(c *Card, id int) {
+var cards []modelRef.Card
+var nextID int64 = 1
+
+func CreateCard() {
 	var name string
 	var cardType string
 	var attack int64
@@ -19,7 +24,7 @@ func CreateCard(c *Card, id int) {
 	fmt.Println("Defesa da carta:")
 	fmt.Scan(&defence)
 
-	card := Card{
+	card := modelRef.Card{
 		ID:      nextID,
 		Name:    name,
 		Type:    cardType,
@@ -31,6 +36,7 @@ func CreateCard(c *Card, id int) {
 	cards = append(cards, card)
 	fmt.Println("Carta Forjada Com Sucesso")
 }
+
 func ListCard() {
 	for _, card := range cards {
 		fmt.Printf("ID: %d | Nome: %s | Tipo: %s | Ataque: %d | Defesa: %d \n",
