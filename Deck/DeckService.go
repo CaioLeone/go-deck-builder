@@ -1,4 +1,4 @@
-package deck
+package Deck
 
 import "fmt"
 

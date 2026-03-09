@@ -5,17 +5,20 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/caioleone/go-deck-builder/deck"
+	"github.com/caioleone/go-deck-builder/Deck"
 )
 
-func SaveJson() {
-	data, err := json.MarshalIndent(deck.Deck, "", "  ")
+func SaveJson(d Deck.Deck) {
+	data, err := json.MarshalIndent(d, "", "  ")
 
 	if err != nil {
 		fmt.Println("Erro ao salvar")
 		return
 	}
 
-	os.WriteFile("/Data/deck.json", data, 0644)
+	err = os.WriteFile("/Data/deck.json", data, 0644)
+	if err != nil {
+		fmt.Println("Erro ao salvar arquivo")
+	}
 	fmt.Println("Deck Salvo em deck.json")
 }

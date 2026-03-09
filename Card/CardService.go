@@ -1,8 +1,7 @@
-package card
+package Card
 
 import (
 	"fmt"
-
 )
 
 func CreateCard() {
@@ -83,5 +82,3 @@ func EditCard() {
 	}
 	fmt.Println("Carta nao encontrada")
 }
-
-
