@@ -3,14 +3,15 @@ package main
 import (
 	"fmt"
 
-	dataRef "github.com/caioleone/go-deck-builder/Data"
+	dataRef "github.com/caioleone/go-deck-builder/data"
 	modelRef "github.com/caioleone/go-deck-builder/model"
 	serviceRef "github.com/caioleone/go-deck-builder/service"
 )
 
-var cards []modelRef.Card
 var decks modelRef.Deck
-var nextID int64 = 1
+
+//var cards []modelRef.Card
+//var nextID int64 = 1
 
 func main() {
 	GameMenu()
@@ -51,7 +52,7 @@ func GameMenu() {
 		case 7:
 			serviceRef.AddToDeck(&decks)
 		case 8:
-			dataRef.SaveJson(&decks)
+			dataRef.SaveJson(decks)
 		case 0:
 			fmt.Println("Saindo...")
 			return

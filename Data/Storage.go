@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/caioleone/go-deck-builder/Model"
+	"github.com/caioleone/go-deck-builder/model"
 )
 
 func SaveJson(d Model.Deck) {
