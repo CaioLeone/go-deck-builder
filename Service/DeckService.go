@@ -1,21 +1,23 @@
 package Service
 
-import "fmt"
+import (
+	"fmt"
 
-func CreateDeck(d *Deck) {
+	modelRef "github.com/caioleone/go-deck-builder/model"
+)
+
+func CreateDeck(d *modelRef.Deck) {
 	var deckName string
 
 	fmt.Println("Digite o nome do Deck:")
 	fmt.Scan(&deckName)
 
-	d = Decks{
-		Name: deckName,
-	}
+	d.Name = deckName
 
 	fmt.Println("Deck criado")
 }
 
-func AddToDeck(d *Deck) {
+func AddToDeck(d *modelRef.Deck) {
 	var id int64
 
 	fmt.Println("Vamos Listar todas as cartas disponiveis")
@@ -26,7 +28,7 @@ func AddToDeck(d *Deck) {
 
 	for _, card := range cards {
 		if card.ID == id {
-			deck.Cards = append(deck.Cards, card)
+			d.Cards = append(d.Cards, card)
 			fmt.Println("Carta adicionada ao deck")
 			return
 		}
@@ -35,8 +37,8 @@ func AddToDeck(d *Deck) {
 	fmt.Println("Carta nao encontrada")
 }
 
-func ListDeck(d *Deck) {
-	fmt.Println("Deck: ", deck.Name)
+func ListDeck(d *modelRef.Deck) {
+	fmt.Println("Deck: ", d.Name)
 	for _, card := range cards {
 		fmt.Printf("ID: %d | Nome: %s | Tipo: %s | Ataque: %d | Defesa: %d \n",
 			nextID, card.Name, card.Type, card.Attack, card.Defence)
