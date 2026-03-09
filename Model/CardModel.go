@@ -1,4 +1,4 @@
-package card
+package Model
 
 type Card struct {
 	ID      int64

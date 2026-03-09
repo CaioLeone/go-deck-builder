@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	dataRef "github.com/caioleone/go-deck-builder/Data"
+	deckRef "github.com/caioleone/go-deck-builder/Deck"
 	cardRef "github.com/caioleone/go-deck-builder/card"
-	deckRef "github.com/caioleone/go-deck-builder/deck"
 )
 
 var cards []cardRef.Card
@@ -45,7 +45,7 @@ func GameMenu() {
 		case 4:
 			cardRef.DeleteCard(&cards)
 		case 5:
-			deckRef. CreateDeck(&decks)
+			deckRef.CreateDeck(&decks)
 		case 6:
 			deckRef.ListDeck(decks)
 		case 7:

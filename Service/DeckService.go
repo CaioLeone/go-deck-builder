@@ -1,4 +1,4 @@
-package Deck
+package Service
 
 import "fmt"
 
