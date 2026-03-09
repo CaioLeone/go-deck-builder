@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/caioleone/go-deck-builder/Deck"
+	"github.com/caioleone/go-deck-builder/Model"
 )
 
-func SaveJson(d Deck.Deck) {
+func SaveJson(d Model.Deck) {
 	data, err := json.MarshalIndent(d, "", "  ")
 
 	if err != nil {
