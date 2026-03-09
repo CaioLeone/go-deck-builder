@@ -3,17 +3,17 @@ package main
 import (
 	"fmt"
 
-	"github.com/caioleone/go-deck-builder/card"
-	"github.com/caioleone/go-deck-builder/data"
-	"github.com/caioleone/go-deck-builder/deck"
+	dataRef "github.com/caioleone/go-deck-builder/Data"
+	cardRef "github.com/caioleone/go-deck-builder/card"
+	deckRef "github.com/caioleone/go-deck-builder/deck"
 )
 
-var cards []card.Card
-var decks deck.Deck
+var cards []cardRef.Card
+var decks deckRef.Deck
 var nextID int64 = 1
 
 func main() {
-
+	GameMenu()
 }
 
 func GameMenu() {
@@ -37,21 +37,21 @@ func GameMenu() {
 
 		switch option {
 		case 1:
-			card.CreateCard()
+			cardRef.CreateCard(&cards, &nextID)
 		case 2:
-			card.ListCard()
+			cardRef.ListCard(cards)
 		case 3:
-			card.EditCard()
+			cardRef.EditCard(cards)
 		case 4:
-			card.DeleteCard()
+			cardRef.DeleteCard(&cards)
 		case 5:
-			deck.CreateDeck()
+			deckRef. CreateDeck(&decks)
 		case 6:
-			deck.ListDeck()
+			deckRef.ListDeck(decks)
 		case 7:
-			deck.AddToDeck()
+			deckRef.AddToDeck(cards, &decks)
 		case 8:
-			data.SaveJson()
+			dataRef.SaveJson(decks)
 		case 0:
 			fmt.Println("Saindo...")
 			return

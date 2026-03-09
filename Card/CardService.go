@@ -1,10 +1,10 @@
-package Card
+package card
 
 import (
 	"fmt"
 )
 
-func CreateCard() {
+func CreateCard(c *Card) {
 	var name string
 	var cardType string
 	var attack int64

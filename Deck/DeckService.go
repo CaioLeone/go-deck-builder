@@ -2,20 +2,20 @@ package Deck
 
 import "fmt"
 
-func CreateDeck() {
+func CreateDeck(d *Deck) {
 	var deckName string
 
 	fmt.Println("Digite o nome do Deck:")
 	fmt.Scan(&deckName)
 
-	deck = Deck{
+	d = Decks{
 		Name: deckName,
 	}
 
 	fmt.Println("Deck criado")
 }
 
-func AddToDeck() {
+func AddToDeck(d *Deck) {
 	var id int64
 
 	fmt.Println("Vamos Listar todas as cartas disponiveis")
@@ -35,7 +35,7 @@ func AddToDeck() {
 	fmt.Println("Carta nao encontrada")
 }
 
-func ListDeck() {
+func ListDeck(d *Deck) {
 	fmt.Println("Deck: ", deck.Name)
 	for _, card := range cards {
 		fmt.Printf("ID: %d | Nome: %s | Tipo: %s | Ataque: %d | Defesa: %d \n",
