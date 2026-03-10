@@ -28,7 +28,7 @@ func GameMenu() {
 		fmt.Println("===== DECK MENU =====")
 		fmt.Println("5 - Criar Deck")
 		fmt.Println("6 - Listar Deck")
-		fmt.Println("7 - Editar Deck")
+		fmt.Println("7 - Adcionar Carta ao Deck")
 		fmt.Println("8 - Salvar Deck em JSON")
 		fmt.Println("==========")
 		fmt.Println("0 - Sair")
